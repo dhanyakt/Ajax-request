@@ -22,7 +22,6 @@ function loadData() {
     console.log("StreetView: " + streetViewUrl);
     $body.append('<img class="bgimg" src=" '+ streetViewUrl + '">');
 
-
     //AJAX REQUEST
     var nyUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q='+ city +'&page=2&sort=oldest&api-key=3e98fdc33a2543a9be59a1865c49e9fb';
 
@@ -40,7 +39,6 @@ function loadData() {
     }) .error(function(e) {
             $nytElem.text("Reuest denied");
         }); // Chaining of the error function
-
 
     var wikiRequestTimeOut = setTimeout(function(){
         $wikiElem.text("Request denied");
@@ -62,12 +60,10 @@ function loadData() {
         }
     });
 
-           // Send AJAX query via jQuery library.
-            $.ajax(settings);
-
-
+    // Send AJAX query via jQuery library.
+    $.ajax(settings);
     return false;
-
 };
 
 $('#form-container').submit(loadData);
+
